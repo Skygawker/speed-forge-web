@@ -20,9 +20,11 @@ const Index = () => {
         <div className="container py-6 flex items-center justify-between">
           <a href="/" className="text-xl font-semibold">2b2t Community Hub</a>
           <nav className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#news" className="hover:underline">News</a>
-            <a href="#guides" className="hover:underline">Guides</a>
-            <a href="#events" className="hover:underline">Events</a>
+            <a href="/youtube" className="hover:underline">YouTube</a>
+            <a href="/players" className="hover:underline">Players</a>
+            <a href="/projects" className="hover:underline">Projects</a>
+            <a href="/shops" className="hover:underline">Shops</a>
+            <a href="/clans" className="hover:underline">Clans</a>
           </nav>
         </div>
       </header>
