@@ -9,7 +9,10 @@ const YouTube = () => {
           description="Newest 2b2t videos from selected channels."
           canonicalPath="/youtube"
         />
-        <h1 className="text-3xl font-semibold mb-4">Latest YouTube Videos</h1>
+        <h1 className="text-3xl font-semibold mb-2">Latest YouTube Videos</h1>
+        <nav className="mb-6 text-sm text-muted-foreground" aria-label="Secondary">
+          <a href="/proxy-guide" className="hover:underline">Read the Proxy Guide</a>
+        </nav>
         <p className="text-muted-foreground mb-8">
           After we enable the admin + Supabase, this page will automatically pull from your selected channels.
         </p>

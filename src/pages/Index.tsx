@@ -21,6 +21,7 @@ const Index = () => {
           <a href="/" className="text-xl font-semibold">2b2t Community Hub</a>
           <nav className="flex gap-6 text-sm text-muted-foreground">
             <a href="/youtube" className="hover:underline">YouTube</a>
+            <a href="/proxy-guide" className="hover:underline">Proxy Guide</a>
             <a href="/players" className="hover:underline">Players</a>
             <a href="/projects" className="hover:underline">Projects</a>
             <a href="/shops" className="hover:underline">Shops</a>
@@ -77,7 +78,7 @@ const Index = () => {
 
       <footer className="border-t">
         <div className="container py-8 text-center text-sm text-muted-foreground">
-          Not affiliated with 2b2t.org. Community fan site.
+          Not affiliated with 2b2t.org. Community fan site. • <a href="/admin" className="underline underline-offset-2">Admin</a>
         </div>
       </footer>
     </div>
