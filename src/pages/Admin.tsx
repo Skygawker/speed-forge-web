@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
+import AdminTextEditor from "@/components/AdminTextEditor";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ADMIN_EMAIL = "2b2tboy@gmail.com";
 
@@ -111,31 +113,54 @@ const Admin = () => {
               <Button variant="outline" onClick={signOut}>Sign out</Button>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <article className="rounded-lg border bg-card p-6 shadow-sm">
-                <h3 className="font-semibold mb-2">YouTube</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Managing channels will be enabled after we create database tables.
-                </p>
-                <div className="flex gap-3">
-                  <Button asChild>
-                    <a href="/youtube">Open YouTube page</a>
-                  </Button>
-                </div>
-              </article>
+            <Tabs defaultValue="content" className="w-full">
+              <TabsList className="grid w-full grid-cols-3">
+                <TabsTrigger value="content">Content Editor</TabsTrigger>
+                <TabsTrigger value="pages">Page Management</TabsTrigger>
+                <TabsTrigger value="settings">Settings</TabsTrigger>
+              </TabsList>
+              
+              <TabsContent value="content" className="space-y-6">
+                <AdminTextEditor />
+              </TabsContent>
+              
+              <TabsContent value="pages" className="space-y-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <article className="rounded-lg border bg-card p-6 shadow-sm">
+                    <h3 className="font-semibold mb-2">YouTube</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Managing channels will be enabled after we create database tables.
+                    </p>
+                    <div className="flex gap-3">
+                      <Button asChild>
+                        <a href="/youtube">Open YouTube page</a>
+                      </Button>
+                    </div>
+                  </article>
 
-              <article className="rounded-lg border bg-card p-6 shadow-sm">
-                <h3 className="font-semibold mb-2">Proxy Guide</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Draft and publish a proxy setup guide for your users.
-                </p>
-                <div className="flex gap-3">
-                  <Button asChild>
-                    <a href="/proxy-guide">Open Proxy Guide</a>
-                  </Button>
+                  <article className="rounded-lg border bg-card p-6 shadow-sm">
+                    <h3 className="font-semibold mb-2">Proxy Guide</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Draft and publish a proxy setup guide for your users.
+                    </p>
+                    <div className="flex gap-3">
+                      <Button asChild>
+                        <a href="/proxy-guide">Open Proxy Guide</a>
+                      </Button>
+                    </div>
+                  </article>
                 </div>
-              </article>
-            </div>
+              </TabsContent>
+              
+              <TabsContent value="settings" className="space-y-6">
+                <div className="rounded-lg border bg-card p-6 shadow-sm">
+                  <h3 className="font-semibold mb-2">Site Settings</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Additional settings and configurations will be added here.
+                  </p>
+                </div>
+              </TabsContent>
+            </Tabs>
           </section>
         )}
       </main>
